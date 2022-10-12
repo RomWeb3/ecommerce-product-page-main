@@ -25,6 +25,7 @@
     <img class="logo" src="./images/logo.svg" alt="logo sneakers">
     </div>
     <div class="wrap2">
+    <div id="cart-count" class="cart-count"></div>
     <img class="cart" id="cart" src="./images/icon-cart.svg" alt="icon cart">
     <img class="avatar" src="./images/image-avatar.png" alt="avatar picture">
     </div>
@@ -34,17 +35,39 @@
 
   <main>
 
-    <div class="carrousel">
-    <div id="previous" class="previous">
-      <img class="icon-previous" src="./images/icon-previous.svg" alt="">
-    </div>
-    <div id="next" class="next">
+    
+
+    <div class="carousel" data-carousel>
+      <div class="cart-modal" data-cart>
+        <h4>Cart</h4>
+        <div class="separator"></div>
+        <s>Your cart is empty.</s>
+        <div class="flex">
+          <div class="wrap1">
+            <img class="thumb" src="./images/image-product-1-thumbnail.jpg" alt="">
+            <p>Autunm Limited Edition...</br>
+            $125.00 x <e id="card-counter">0</e> <b>$<f id="total-price"125</f></b></p>
+          </div>
+          
+            
+         <div>
+            <img id="delete-card" class="del" src="./images/icon-delete.svg" alt="">
+          </div>
+        </div>
+        <button type="button">Checkout</button>
+      </div>
+    <button class="previous" data-carousel-button="prev">
+      <img class="icon-previous"  src="./images/icon-previous.svg" alt="">
+    </button>
+    <button class="next" data-carousel-button="next">
       <img class="icon-next" src="./images/icon-next.svg" alt="">
+    </button>
+    <div class="wrapImg" data-slides>
+      <img class="img-product" data-active src="./images/image-product-1.jpg" alt="sneakers image product">
+      <img class="img-product" src="./images/image-product-2.jpg" alt="sneakers image product">
+      <img class="img-product" src="./images/image-product-3.jpg" alt="sneakers image product">
+      <img class="img-product" src="./images/image-product-4.jpg" alt="sneakers image product">
     </div>
-    <img class="img-product-1" src="./images/image-product-1.jpg" alt="sneakers image product">
-    <img class="img-product-1" src="./images/image-product-2.jpg" alt="sneakers image product">
-    <img class="img-product-2" src="./images/image-product-3.jpg" alt="sneakers image product">
-    <img class="img-product-2" src="./images/image-product-4.jpg" alt="sneakers image product">
     </div>
 
     <div class="container">
@@ -63,11 +86,11 @@
     
     <div class="add-to-cart">
     <div class="quantity">
-      <img src="./images/icon-minus.svg" alt="">
-      0
-      <img src="./images/icon-plus.svg" alt="">
+      <img id="minus" src="./images/icon-minus.svg" alt="">
+      <span id="counter">0</span>
+      <img id="plus" src="./images/icon-plus.svg" alt="">
     </div>
-    <button class="add-to-cart-btn" type="button">
+    <button id="add-cart-btn" class="add-to-cart-btn" type="button">
       <img src="./images/icon-cart-white.svg" alt="">
       Add to cart
     </button>

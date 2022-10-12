@@ -58,7 +58,7 @@ nav {
     width: 25rem;
     background: white;
     padding: 2rem;
-    z-index: 10;
+    z-index: 20;
 }
 
 nav p {
@@ -70,12 +70,12 @@ nav p {
     margin-bottom: 5rem;
 }
 
-.carrousel {
+.carousel {
     height: 30rem;
     position: relative;
 }
 
-.carrousel img {
+.carousel img {
     height: 30rem;
     width: 100%;
     object-fit: cover;
@@ -85,15 +85,17 @@ nav p {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
+    border: none;
     background: white;
     position: absolute;
     left: 1.5rem;
     top: 0;
     bottom: 0;
     margin: auto;
+    z-index: 9;
 }
 
-.carrousel img.icon-previous {
+.carousel img.icon-previous {
     position: absolute;
     height: 1.5rem;
     width: 1rem;
@@ -107,15 +109,18 @@ nav p {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
+    border: none;
     background: white;
     position: absolute;
     right: 1.5rem;
     top: 0;
     bottom: 0;
     margin: auto;
+    z-index: 9;
+
 }
 
-.carrousel img.icon-next {
+.carousel img.icon-next {
     position: absolute;
     height: 1.5rem;
     width: 1rem;
@@ -192,7 +197,7 @@ b {
     margin-bottom: 1.5rem;
     background: hsl(223, 64%, 98%);
     padding: 1.75rem 2.5rem;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
     border-radius: 10px;
 }
@@ -204,6 +209,7 @@ b {
     color: white;
     background: hsl(26, 100%, 55%);
     font-size: 1.5rem;
+    font-weight: 700;
     font-family: inherit;
     padding: 1.75rem;
     border-radius: 10px;
@@ -217,6 +223,138 @@ b {
     margin-right: 1rem;
     height: 1.75rem;
     width: 1.75rem;
+}
+
+.img-product {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.img-product[data-active] {
+    opacity: 1;
+    z-index: 1;
+}
+
+.cart-modal {
+    width: 95%;
+    max-width: 35.5rem;
+    height: 25rem;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 11;
+    display: none;
+}
+
+.cart-modal.active {
+    display: block;
+}
+
+.cart-modal h4 {
+    font-size: 1.75rem;
+    margin: 2rem 2rem;
+}
+
+.separator {
+    border-top: 1px solid hsla(220, 14%, 75%, 0.5);
+}
+
+.cart-modal s {
+    position: absolute;
+    top: 55%;
+    left: 28.75%;
+    color: hsl(219, 9%, 45%);
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.cart-modal img, .cart-modal p, .cart-modal span, .cart-modal button {
+    display: none;
+}
+
+.cart-modal.active-cart s {
+    display: none;
+}
+
+.cart-modal.active-cart, .cart-modal.active-cart p, .cart-modal.active-cart span, .cart-modal.active-cart img, .cart-modal.active-cart button {
+    display: block;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.wrap1 {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.flex img {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.cart-modal.active-cart p {
+    color: hsl(219, 9%, 45%);
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.cart-modal.active-cart p b {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: black;
+}
+
+img.del {
+    width: 1.25rem;
+    height: 1.7rem;
+    border-radius: 0;
+}
+
+.cart-modal.active-cart button {
+    border: none;
+    outline: none;
+    width: 89%;
+    color: white;
+    background: hsl(26, 100%, 55%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: inherit;
+    padding: 1.75rem;
+    border-radius: 10px;
+    margin-left: 2rem;
+}
+
+.cart-count {
+    height: 1.35rem;
+    width: 2rem;
+    background: hsl(26, 100%, 55%);
+    border-radius: 10px;
+    position: absolute;
+    top: 1.75rem;
+    right: 5.25rem;
+    opacity: 1;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0;
+}
+
+.cart-count.active {
+    scale: 1;
 }
 
 
