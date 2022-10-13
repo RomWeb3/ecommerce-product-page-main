@@ -33,6 +33,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 2rem 2.5rem;
+    max-width: 111rem;
 }
 
 .wrap, .wrap2 {
@@ -42,9 +43,19 @@ header {
     gap: 1.5rem;
 }
 
+.cart {
+    cursor: pointer;
+}
+
 .avatar {
     height: 2.5rem;
     width: 2.5rem;
+    cursor: pointer;
+}
+
+.avatar:hover {
+    border: 2px solid hsl(26, 100%, 55%);
+    border-radius: 50%;
 }
 
 .menu {
@@ -54,6 +65,8 @@ header {
 nav {
     display: none;
     position: absolute;
+    top: 0;
+    left: 0;
     min-height: 100vh;
     width: 25rem;
     background: white;
@@ -61,9 +74,15 @@ nav {
     z-index: 20;
 }
 
-nav p {
+nav li {
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+nav a {
     font-size: 1.8rem;
     font-weight: 700;
+    color: black;
 }
 
 .menu-btn-close {
@@ -79,6 +98,7 @@ nav p {
     height: 30rem;
     width: 100%;
     object-fit: cover;
+    object-position: top;
 }
 
 .previous {
@@ -117,7 +137,6 @@ nav p {
     bottom: 0;
     margin: auto;
     z-index: 9;
-
 }
 
 .carousel img.icon-next {
@@ -155,7 +174,6 @@ p {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
     margin-bottom: 3rem;
 }
 
@@ -196,10 +214,15 @@ b {
     width: 100%;
     margin-bottom: 1.5rem;
     background: hsl(223, 64%, 98%);
-    padding: 1.75rem 2.5rem;
+    padding: 0 2.5rem;
     font-size: 1.75rem;
     font-weight: 700;
     border-radius: 10px;
+}
+
+.minus, .plus {
+    cursor: pointer;
+    padding: 2.05rem 0;
 }
 
 .add-to-cart-btn {
@@ -216,7 +239,12 @@ b {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     box-shadow: 0 20px 50px 0 hsla(26, 100%, 55%, 0.45);
+}
+
+.add-to-cart-btn:hover {
+    opacity: 0.75;
 }
 
 .add-to-cart-btn img {
@@ -229,11 +257,16 @@ b {
     position: absolute;
     top: 0;
     opacity: 0;
+    cursor: pointer;
 }
 
 .img-product[data-active] {
     opacity: 1;
     z-index: 1;
+}
+
+.separatorDesktop {
+    position: relative;
 }
 
 .cart-modal {
@@ -247,6 +280,7 @@ b {
     right: 1rem;
     z-index: 11;
     display: none;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
 .cart-modal.active {
@@ -316,9 +350,10 @@ b {
 }
 
 img.del {
-    width: 1.25rem;
+    width: 1.3rem;
     height: 1.7rem;
     border-radius: 0;
+    cursor: pointer;
 }
 
 .cart-modal.active-cart button {
@@ -333,6 +368,11 @@ img.del {
     padding: 1.75rem;
     border-radius: 10px;
     margin-left: 2rem;
+    cursor: pointer;
+}
+
+.wrap2 {
+    position: relative;
 }
 
 .cart-count {
@@ -341,8 +381,8 @@ img.del {
     background: hsl(26, 100%, 55%);
     border-radius: 10px;
     position: absolute;
-    top: 1.75rem;
-    right: 5.25rem;
+    top: -0.25rem;
+    right: 3.25rem;
     opacity: 1;
     color: white;
     font-size: 1rem;
@@ -357,6 +397,325 @@ img.del {
     scale: 1;
 }
 
+.thumbnails, .modalDesktop {
+    display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .carousel {
+        height: 60rem;
+    }
+
+    .carousel .img-product {
+        height: 60rem;
+    }
+
+    .flex img {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 5px;
+    }
+
+    img.del {
+        width: 1.3rem;
+        height: 1.7rem;
+        border-radius: 0;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    .container p {
+        max-width: 48rem;
+        font-size: 1.75rem;
+    }
+
+    .add-to-cart {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
+
+    .quantity {
+        max-width: 35rem;
+        margin: 0;
+    }
+
+    .add-to-cart-btn {
+        max-width: 35rem;
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    html {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu, .menu-btn-close, .previous, .next {
+        display: none;
+    }
+
+    nav {
+        display: block;
+        background: none;
+        width: 40rem;
+        position: static;
+        min-height: 2rem;
+        margin-left: -25rem;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    nav a {
+        font-size: 1.65rem;
+        font-weight: 400;
+        color: hsl(219, 9%, 45%);
+        padding-bottom: 7.1rem;
+    }
+
+    nav a:hover {
+        color: black;
+        border-bottom: 5px solid hsl(26, 100%, 55%);
+        margin-top: 10rem;
+    }
+
+    .cart {
+        margin-right: 2.5rem;
+    }
+
+    .cart-modal {
+        top: -2rem;
+    }
+
+    .avatar {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .separatorDesktop {
+        border-top: 1px solid hsla(220, 14%, 75%, 0.5);
+        max-width: 111rem;
+        margin-top: 1rem;
+    }
+
+    main {
+        display: flex;
+        gap: 10rem;
+        margin-top: 9rem;
+    }
+
+    .carousel {
+        height: 44rem;
+        width: 44rem;
+        padding: 2rem;
+    }
+
+    .carousel .img-product {
+        height: 44rem;
+        border-radius: 15px;
+    }
+
+    .container {
+        margin-top: 6.5rem;
+        max-width: 45rem;
+        padding: 0;
+    }
+
+    .container h3 {
+        font-size: 1.35rem;
+    }
+
+    .container h2 {
+        font-size: 4rem;
+    }
+
+    .container p {
+        font-size: 1.5rem;
+        color: hsl(219, 9%, 45%);
+    }
+
+    .price {
+        position: relative;
+    }
+
+    .old-price {
+        position: absolute;
+        font-size: 1.5rem;
+        top: 4rem;
+        left: -8.9rem;
+    }
+
+    .add-to-cart {
+        margin-top: 6rem;
+    }
+
+    .quantity {
+        max-width: 15rem;
+        margin: 0;
+    }
+
+    .add-to-cart-btn {
+        max-width: 27rem;
+    }
+
+    .thumbnails {
+        display: flex;
+        gap: 2.7rem;
+        margin-top: 45rem;
+    }
+
+    .thumbnails .thumbnail {
+        height: 9rem;
+        width: 9rem;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-bottom: 5rem;
+    }
+
+    .thumbnails .thumbnail:focus {
+        opacity: 0.5;
+        border: 3px solid hsl(26, 100%, 55%);
+    }
+
+    .thumbnails .thumbnail:hover {
+        opacity: 0.7;
+    }
+
+    .cart-count {
+        right: 8rem;
+        top: 0.8rem;
+    }
+
+    /* Desktop modal */
+
+    .wrapModal {
+        position: absolute;
+    }
+
+    .modalDesktop {
+        position: absolute;
+        z-index: 21;
+        top: -6.6rem;
+        left: 24rem;
+        border-radius: 24px;
+        box-shadow: 0 1px 0 50000px rgba(0, 0, 0, 0.75);
+    }
+
+    .modalDesktop.active {
+        display: block;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: -4.75rem;
+        right: 0;
+        z-index: 23;
+        height: 2.25rem;
+        width: 2.25rem;
+        cursor: pointer;
+    }
+
+    .carousel-modal {
+        height: 55rem;
+        width: 55rem;
+        border-radius: 20px;
+    }
+
+    .img-product-modal {
+        width: 55rem;
+        height: 55rem;
+        border-radius: 20px;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+    }
+    
+    .img-product-modal[data-active] {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .previous-modal {
+        height: 5.5rem;
+        width: 5.5rem;
+        border-radius: 50%;
+        border: none;
+        background: white;
+        position: absolute;
+        left: -2.75rem;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 23;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .next-modal {
+        height: 5.5rem;
+        width: 5.5rem;
+        border-radius: 50%;
+        border: none;
+        background: white;
+        position: absolute;
+        right: -2.75rem;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 23;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .thumbnails-modal {
+        display: flex;
+        gap: 2.7rem;
+        margin-top: 45rem;
+        position: absolute;
+        top: 13.5rem;
+        left: 5rem;
+    }
+
+    .thumbnails-modal .thumbnail-modal {
+        height: 9rem;
+        width: 9rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .thumbnails-modal .thumbnail-modal:focus {
+        opacity: 0.6;
+        border: 3px solid hsl(26, 100%, 55%);
+    }
+
+    .thumbnails-modal .thumbnail-modal:hover {
+        opacity: 0.75;
+    }
+
+}
+
+
+@media screen and (min-width: 1440px) {
+
+    main {
+        gap: 14.5rem;
+    }
+
+}
 
 
 

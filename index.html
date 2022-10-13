@@ -10,20 +10,23 @@
 </head>
 <body>
 
-  <nav>
-    <img class="menu-btn-close" id="menu-btn-close" src="./images/icon-close.svg" alt="">
-    <p>Collections</p>
-    <p>Men</p>
-    <p>Women</p>
-    <p>About</p>
-    <p>Contact</p>
-  </nav>
-
   <header>
     <div class="wrap">
-    <img class="menu" id="menu-btn" src="./images/icon-menu.svg" alt="icon menu">
-    <img class="logo" src="./images/logo.svg" alt="logo sneakers">
+      <img class="menu" id="menu-btn" src="./images/icon-menu.svg" alt="icon menu">
+      <img class="logo" src="./images/logo.svg" alt="logo sneakers">
     </div>
+
+    <nav>
+      <img class="menu-btn-close" id="menu-btn-close" src="./images/icon-close.svg" alt="">
+        <ul>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="wrap2">
     <div id="cart-count" class="cart-count"></div>
     <img class="cart" id="cart" src="./images/icon-cart.svg" alt="icon cart">
@@ -31,31 +34,27 @@
     </div>
   </header>
 
- 
+  <div class="separatorDesktop">
+    <div class="cart-modal" data-cart>
+      <h4>Cart</h4>
+      <div class="separator"></div>
+      <s>Your cart is empty.</s>
+      <div class="flex">
+        <div class="wrap1">
+          <img class="thumb" src="./images/image-product-1-thumbnail.jpg" alt="">
+          <p>Autunm Limited Edition...</br>
+          $125.00 x <e id="card-counter">0</e> <b>$<f id="total-price"125</f></b></p>
+        </div>
+       <div>
+          <img id="delete-card" class="del" src="./images/icon-delete.svg" alt="">
+        </div>
+      </div>
+      <button type="button">Checkout</button>
+    </div>
+  </div>
 
   <main>
-
-    
-
     <div class="carousel" data-carousel>
-      <div class="cart-modal" data-cart>
-        <h4>Cart</h4>
-        <div class="separator"></div>
-        <s>Your cart is empty.</s>
-        <div class="flex">
-          <div class="wrap1">
-            <img class="thumb" src="./images/image-product-1-thumbnail.jpg" alt="">
-            <p>Autunm Limited Edition...</br>
-            $125.00 x <e id="card-counter">0</e> <b>$<f id="total-price"125</f></b></p>
-          </div>
-          
-            
-         <div>
-            <img id="delete-card" class="del" src="./images/icon-delete.svg" alt="">
-          </div>
-        </div>
-        <button type="button">Checkout</button>
-      </div>
     <button class="previous" data-carousel-button="prev">
       <img class="icon-previous"  src="./images/icon-previous.svg" alt="">
     </button>
@@ -67,6 +66,12 @@
       <img class="img-product" src="./images/image-product-2.jpg" alt="sneakers image product">
       <img class="img-product" src="./images/image-product-3.jpg" alt="sneakers image product">
       <img class="img-product" src="./images/image-product-4.jpg" alt="sneakers image product">
+    </div>
+    <div class="thumbnails">
+      <img class="thumbnail" src="./images/image-product-1-thumbnail.jpg" alt="" tabindex="0">
+      <img class="thumbnail" src="./images/image-product-2-thumbnail.jpg" alt="" tabindex="0">
+      <img class="thumbnail" src="./images/image-product-3-thumbnail.jpg" alt="" tabindex="0">
+      <img class="thumbnail" src="./images/image-product-4-thumbnail.jpg" alt="" tabindex="0">
     </div>
     </div>
 
@@ -86,14 +91,40 @@
     
     <div class="add-to-cart">
     <div class="quantity">
-      <img id="minus" src="./images/icon-minus.svg" alt="">
+      <img class="minus" id="minus" src="./images/icon-minus.svg" alt="">
       <span id="counter">0</span>
-      <img id="plus" src="./images/icon-plus.svg" alt="">
+      <img class="plus" id="plus" src="./images/icon-plus.svg" alt="">
     </div>
     <button id="add-cart-btn" class="add-to-cart-btn" type="button">
       <img src="./images/icon-cart-white.svg" alt="">
       Add to cart
     </button>
+    </div>
+    </div>
+    <div class="wrapModal">
+    <div class="modalDesktop">
+      
+      <img class="close-modal" src="./images/icon-close - Copy.svg" alt="">
+      <div class="carousel-modal" data-carousel>
+        <button class="previous-modal" data-carousel-button="prev">
+          <img class="icon-previous"  src="./images/icon-previous.svg" alt="">
+        </button>
+        <button class="next-modal" data-carousel-button="next">
+          <img class="icon-next" src="./images/icon-next.svg" alt="">
+        </button>
+        <div class="wrapImg" data-slides>
+          <img class="img-product-modal" data-active src="./images/image-product-1.jpg" alt="sneakers image product">
+          <img class="img-product-modal" src="./images/image-product-2.jpg" alt="sneakers image product">
+          <img class="img-product-modal" src="./images/image-product-3.jpg" alt="sneakers image product">
+          <img class="img-product-modal" src="./images/image-product-4.jpg" alt="sneakers image product">
+        </div>
+        <div class="thumbnails-modal">
+          <img class="thumbnail-modal" src="./images/image-product-1-thumbnail.jpg" alt="" tabindex="0">
+          <img class="thumbnail-modal" src="./images/image-product-2-thumbnail.jpg" alt="" tabindex="0">
+          <img class="thumbnail-modal" src="./images/image-product-3-thumbnail.jpg" alt="" tabindex="0">
+          <img class="thumbnail-modal" src="./images/image-product-4-thumbnail.jpg" alt="" tabindex="0">
+        </div>
+        </div>
     </div>
     </div>
  

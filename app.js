@@ -98,6 +98,34 @@ deleteCard.addEventListener('click', () => {
 });
 
 
+// Desktop click thumbnail display image
+
+const thumbnails = document.querySelectorAll('.thumbnail');
+const mainImage = document.querySelector('.img-product');
+
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.src.replace('-thumbnail', '');
+    });
+});
+
+// Desktop carousel modal
+
+const modal = document.querySelector('.modalDesktop');
+const modalBtnClose = document.querySelector('.close-modal');
+
+mainImage.addEventListener('click', () => {
+    modal.classList.add('active');
+});
+
+modalBtnClose.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+
+
+
+
 
 
 
