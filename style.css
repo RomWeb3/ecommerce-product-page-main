@@ -47,6 +47,10 @@ header {
     cursor: pointer;
 }
 
+.cart:hover {
+    filter: brightness(0);
+}
+
 .avatar {
     height: 2.5rem;
     width: 2.5rem;
